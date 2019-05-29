@@ -2,7 +2,7 @@
 title           : blockchain_client.py
 description     : A blockchain client implemenation, with the following features
                   - Wallets generation using Public/Private key encryption (based on RSA algorithm)
-                  - Generation of transactions with RSA encryption      
+                  - Generation of transactions with RSA encryption
 author          : Adil Moujahid
 date_created    : 20180212
 date_modified   : 20180309
@@ -31,7 +31,8 @@ from flask import Flask, jsonify, request, render_template
 
 class Transaction:
 
-    def __init__(self, sender_address, sender_private_key, recipient_address, value):
+    def __init__(self, sender_address, sender_private_key,
+                 recipient_address, value):
         self.sender_address = sender_address
         self.sender_private_key = sender_private_key
         self.recipient_address = recipient_address
@@ -39,6 +40,9 @@ class Transaction:
 
     def __getattr__(self, attr):
         return self.data[attr]
+
+    def __repr__(self):
+        return str('Blockchain Transaction object __repr__')
 
     def to_dict(self):
         return OrderedDict({'sender_address': self.sender_address,
@@ -53,8 +57,6 @@ class Transaction:
         signer = PKCS1_v1_5.new(private_key)
         h = SHA.new(str(self.to_dict()).encode('utf8'))
         return binascii.hexlify(signer.sign(h)).decode('ascii')
-
-
 
 app = Flask(__name__)
 
@@ -84,7 +86,6 @@ def new_wallet():
 
 @app.route('/generate/transaction', methods=['POST'])
 def generate_transaction():
-	
 	sender_address = request.form['sender_address']
 	sender_private_key = request.form['sender_private_key']
 	recipient_address = request.form['recipient_address']
@@ -99,10 +100,9 @@ def generate_transaction():
 
 if __name__ == '__main__':
     from argparse import ArgumentParser
-
     parser = ArgumentParser()
     parser.add_argument('-p', '--port', default=8080, type=int, help='port to listen on')
     args = parser.parse_args()
     port = args.port
 
-    app.run(host='127.0.0.1', port=port)
+app.run(host='127.0.0.1', port=port)
