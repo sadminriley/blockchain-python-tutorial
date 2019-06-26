@@ -18,17 +18,17 @@ The github repository contains a basic implementation of a blockchain and its cl
 The blockchain client has the following features:
 
 - Wallets generation using Public/Private key encryption (based on RSA algorithm)
-- Generation of transactions with RSA encryption 
+- Generation of transactions with RSA encryption
 
-This github repository also contains 2 dashboards: 
+This github repository also contains 2 dashboards:
 
-- "Blockchain Frontend" for miners 
-- "Blockchain Client" for users to generate wallets and send coins 
+- "Blockchain Frontend" for miners
+- "Blockchain Client" for users to generate wallets and send coins
 
 
 # Dependencies
 
-- Works with ```Python 3.6``` 
+- Works with ```Python 3.6```
 - [Anaconda's Python distribution](https://www.continuum.io/downloads) contains all the dependencies for the code to run.
 
 # How to run the code
@@ -40,6 +40,13 @@ This github repository also contains 2 dashboards:
 ```python blockchain_client.py -p 8080```
 4. You can access the blockchain frontend and blockchain client dashboards from your browser by going to localhost:5000 and localhost:8080
 
+## Running the Dockerfile for the blockchain_client.py
 
+```
+docker build .
+```
+```
+docker run <id>
+```
 
 # Visit my Blog : http://adilmoujahid.com

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 '''
 title           : blockchain_client.py
 description     : A blockchain client implemenation, with the following features
