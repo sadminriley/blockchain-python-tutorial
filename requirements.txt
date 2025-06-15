@@ -62,7 +62,7 @@ pytz==2019.1
 pyvcloud==20.0.3
 pyvmomi==6.7.1.2018.12
 PyYAML==3.13
-requests==2.21.0
+requests==2.32.4
 s3transfer==0.2.0
 six==1.12.0
 SQLAlchemy==1.3.3
