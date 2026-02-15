@@ -14,7 +14,7 @@ clickclick==1.2.2
 colorama==0.4.1
 connexion==2.2.0
 container-service-extension==1.2.7
-cryptography==2.6.1
+cryptography==46.0.5
 docutils==0.14
 ecc==0.0.1
 entrypoints==0.3
